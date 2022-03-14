@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 自動旋轉
+/// </summary>
 public class ObjRotate : MonoBehaviour
 {
     public float rotateSpeed;
