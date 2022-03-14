@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// 設定面板
+/// </summary>
 public class SettingPanel : BasePanel<SettingPanel>
 {
     public Button btnBack;
@@ -24,6 +27,7 @@ public class SettingPanel : BasePanel<SettingPanel>
         btnBack.onClick.AddListener(() =>
         {
             HideMe();
+            //檢測開始場景是否在執行
             if (SceneManager.GetActiveScene().name == "BeginScene")
             {
                 BeginPanel.Instance.ShowMe();
@@ -53,7 +57,7 @@ public class SettingPanel : BasePanel<SettingPanel>
 
         HideMe();
     }
-
+    //更新音樂相關數據到面板
     public void UpdatePanelInfo()
     {
         MusicData data = GameDataMgr.Instance.musicData;

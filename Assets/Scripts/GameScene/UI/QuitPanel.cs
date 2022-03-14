@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// 退出面板
+/// </summary>
 public class QuitPanel : BasePanel<QuitPanel>
 {
     public Button btnSure;
@@ -14,6 +17,7 @@ public class QuitPanel : BasePanel<QuitPanel>
     {
         btnSure.onClick.AddListener(() =>
         {
+            //切換到開始場景
             SceneManager.LoadScene("BeginScene");
         });
         btnBack.onClick.AddListener(() =>
@@ -28,6 +32,7 @@ public class QuitPanel : BasePanel<QuitPanel>
     {
         
     }
+    //覆寫隱藏自己讓時間啟動
     public override void HideMe()
     {
         base.HideMe();

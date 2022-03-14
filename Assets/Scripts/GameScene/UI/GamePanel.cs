@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+/// <summary>
+/// 主遊戲面板
+/// </summary>
 public class GamePanel : BasePanel<GamePanel>
 {
     public Button btnBack;
@@ -18,9 +20,9 @@ public class GamePanel : BasePanel<GamePanel>
     public int nowScore = 0;
     [HideInInspector]
     public float nowTime;
-
+    //HP條的寬度
     private int hpW = 278;
-
+    //遊戲時間
     private int time;
     // Start is called before the first frame update
     void Start()
@@ -38,6 +40,7 @@ public class GamePanel : BasePanel<GamePanel>
     }
     private void Update()
     {
+        //計時遊戲時間
         nowTime += Time.deltaTime;
 
         time = (int)nowTime;
@@ -52,12 +55,14 @@ public class GamePanel : BasePanel<GamePanel>
         }
         txtTime.text += time % 60 + "秒";
     }
+    //加分
     public void AddScore(int score)
     {
         nowScore += score;
 
         txtScore.text = nowScore.ToString();
     }
+    //更新血條
     public void UpdateHP(int hp,int maxHp)
     {
         //更新血條的長度 Vector2(血量/最大血量*血條長度,血條寬度)

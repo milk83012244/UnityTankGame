@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 排行榜面板
+/// </summary>
 public class RankPanel : BasePanel<RankPanel>
 {
 
@@ -20,6 +23,7 @@ public class RankPanel : BasePanel<RankPanel>
             HideMe();
             BeginPanel.Instance.ShowMe();
         });
+        //遍歷排行榜的文字腳本 添加到List中
         for (int i = 1; i <= 10; i++)
         {
             //txtRank.Add(this.transform.Find("Rank/txtRank" + i).GetComponent<Text>());
@@ -34,13 +38,17 @@ public class RankPanel : BasePanel<RankPanel>
         base.ShowMe();
         UpdatePanalInfo();
     }
+    //更新排行榜面板數值
     public void UpdatePanalInfo()
     {
+        //取得排行榜數據
         List<RankInfo> list = GameDataMgr.Instance.rankData.list;
+        //遍歷添加數值到List裝的控件上
         for (int i = 0; i < list.Count; i++)
         {
             txtName[i].text = list[i].name;
             txtScore[i].text = list[i].score.ToString();
+            //計時的文字
             int time = (int)list[i].time;
             txtTime[i].text = "";
             if (time / 3600 > 0)

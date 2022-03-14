@@ -9,6 +9,7 @@ public class Billboard : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        //讓攝影機看向血條的方向永遠相同
         transform.LookAt(transform.position + cam.forward);
     }
 }

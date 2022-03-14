@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// 遊戲失敗面板
+/// </summary>
 public class LosePanel : BasePanel<LosePanel>
 {
     public Button btnRestart;
@@ -15,11 +18,13 @@ public class LosePanel : BasePanel<LosePanel>
         btnRestart.onClick.AddListener(() =>
         {
             Time.timeScale = 1;
+            //切換遊戲場景
             SceneManager.LoadScene("GameScene");
         });
         btnBack.onClick.AddListener(() =>
         {
             Time.timeScale = 1;
+            //切換開始場景
             SceneManager.LoadScene("BeginScene");
         });
         HideMe();

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 玩家攝影機移動
+/// </summary>
 public class CameraMove : MonoBehaviour
 {
     //攝影機看向的對象
